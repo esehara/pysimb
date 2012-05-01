@@ -1,0 +1,31 @@
+Blog:
+  Title: Pysimb
+  Description: This site is made by Pysimb.
+  Author: shigeo esehara (似非原重雄)
+  Email: esehara@gmail.com
+  Link:  http://localhost/pysimb/
+
+Time:
+  Fix: +0900
+
+Output:
+  Body:  haml
+  Entry: use_markdown
+
+Meta:
+  RSS: use_rss
+
+Generator:
+  Filelist: default_filelist
+
+Dir:
+  Entry: entry
+  Public: public
+  Templete: templete
+
+File:
+  Head: header.templete
+  Index: index.templete
+  Entry: entry.templete
+  Foot: footer.templete
+  CSS: css/main.css

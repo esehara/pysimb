@@ -1,0 +1,12 @@
+body {
+	background-color: #AAA;
+}
+
+h1 {
+	color: red;
+}
+
+#main {
+	background-color: #EEE;
+	padding: 20px;
+}

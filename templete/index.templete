@@ -1,0 +1,15 @@
+html
+  !{HEAD}
+  body
+    div.container
+      div.hero-unit
+        h1 | @{title}
+        h2 | @{description}
+        p
+          by @{author}
+        p
+          <a href="./index.py?meta=RSS">RSS</a>
+      div.well.sidebar-nav
+        ul.nav.nav-list
+          li.nav-header | Entry
+          @{filelist}
