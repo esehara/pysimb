@@ -4,6 +4,8 @@ Welcome Pysimb
 What is Pysimb?
 ---------------
 
+ Example : http://www45045u.sakura.ne.jp/pysimb/
+
  Pysimb is __Sim__ple __B__log System written by Python3.x .
 
 Overview
@@ -20,6 +22,14 @@ Feature
 * Pysimb is very simple.
 * Pysimb is plugin based system.
 
+Get Start
+---------
+
+ Ok,you start blog in Pysimb.Can your Server Machine use Python3? :) 
+
+ Default Entry Directory is "Entry".Make Directory and Make file (ex. foobar.markdown)
+
+ And,browse Pysimb,show page by pysimb. 
 
 Configure
 ---------
