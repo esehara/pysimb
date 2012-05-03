@@ -2,7 +2,7 @@
 import markdown
 
 def output(string):
-	string = markdown.markdown(string,['headerid(level=2)'])
+	string = markdown.markdown(string,['headerid(level=3)'])
 	return string;
 
 if __name__ == "__main__":

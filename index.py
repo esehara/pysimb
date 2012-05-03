@@ -22,7 +22,8 @@ class Pysimb:
 
 	def bodyhtml(self,string):
 		string = self.modules['Body'].output(string)
-		return self.parse_string_body(string)
+		string = self.parse_string_body(string)
+		return self.parse_string_index(string)
 
 	def entryhtml(self,string):
 		dp("[Run] Entryhtml is Start.\n")
@@ -34,6 +35,25 @@ class Pysimb:
 
 	def escape_cgi(self,string):
 		return string.replace("/","")
+	
+	def parse_string_index(self,string):
+		filelist_array = self.generator_filelist(self.configure['Dir']['Entry'])
+		entrylist_string = "";
+		for file_item in filelist_array:
+			load_entry_array = open_utf8(self.configure['Dir']['Entry'] + "/" + file_item).readlines()
+			entry_title = load_entry_array.pop(0)
+			load_entry_string = "".join(load_entry_array)
+			load_entry_string = self.modules['Entry'].output(load_entry_string)
+			entrylist_string = entrylist_string + (
+					"<h2>" + 
+						"<a href='./index.py?file=" + file_item + "'>"
+						+ entry_title 
+						+ "</a>"
+						+ load_entry_string
+					+ "<h2>")
+		string = string.replace("@{entrylist}",
+								entrylist_string)
+		return string
 
 	def parse_string_entry(self,string):
 		self.cgi_value['file'][0] = self.escape_cgi(self.cgi_value['file'][0])
@@ -95,10 +115,13 @@ class Pysimb:
 		generator_meta = self.load_module(lib_name)
 		print(generator_meta.output(self.configure))
 
+	def generator_filelist(self,target_dir):
+		generator_filelist = self.load_module(self.configure['Generator']['Filelist'])
+		return generator_filelist.output(target_dir + "/")
+
 	def parse_filelist(self,target_dir):
 		return_string = ""
-		generator_filelist = self.load_module(self.configure['Generator']['Filelist'])
-		file_list = generator_filelist.output(target_dir + "/")
+		file_list = self.generator_filelist(target_dir)
 		for file_item in file_list:
 			entrytitle = open_utf8(target_dir + "/" + file_item).readlines()[0]
 			return_string = return_string + "<li><a href='index.py?file=" + file_item + "'>" + entrytitle.rstrip("\n") + "</a></li>\n"

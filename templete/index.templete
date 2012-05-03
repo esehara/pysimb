@@ -1,15 +1,17 @@
 html
   !{HEAD}
   body
-    div.container
-      div.hero-unit
-        h1 | @{title}
-        h2 | @{description}
-        p
-          by @{author}
-        p
-          <a href="./index.py?meta=RSS">RSS</a>
-      div.well.sidebar-nav
-        ul.nav.nav-list
-          li.nav-header | Entry
-          @{filelist}
+    div.container-fluid
+      div.row-fluid
+        div#header.span2
+          h1 
+            a href="./" | @{title}
+          h3 | @{description}
+          p | by @{author}
+          div.well.sidebar-nav
+            ul.nav.nav-list
+              li.nav-header | <a href="./index.py?meta=RSS">RSS</a>
+              li.nav-header | -- Entry --
+              @{filelist}
+        div#main.span10
+            @{entrylist}
