@@ -1,5 +1,6 @@
 html
   !{HEAD}
+  title | @{title}
   body
     div.container-fluid
       div.row-fluid

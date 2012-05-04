@@ -1,4 +1,5 @@
 html
+  title | @{entry_title} - @{title}
   !{HEAD}
   body
     div.container-fluid

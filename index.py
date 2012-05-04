@@ -45,12 +45,9 @@ class Pysimb:
 			load_entry_string = "".join(load_entry_array)
 			load_entry_string = self.modules['Entry'].output(load_entry_string)
 			entrylist_string = entrylist_string + (
-					"<h2>" + 
-						"<a href='./index.py?file=" + file_item + "'>"
-						+ entry_title 
-						+ "</a>"
+					"<h2>" + "<a href='./index.py?file=" + file_item + "'>" + entry_title + "</a>" + "</h2>"
 						+ load_entry_string
-					+ "<h2>")
+					)
 		string = string.replace("@{entrylist}",
 								entrylist_string)
 		return string
