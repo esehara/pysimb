@@ -1,4 +1,4 @@
 head
-  @{publish_css}
   <link rel='stylesheet' href='@{public_dir}/css/bootstrap.min.css' type='text/css'>
   <link rel='alternate' href='@{link}' title='RSS' type='application/rss+xml'>
+  @{publish_css}

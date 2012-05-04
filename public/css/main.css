@@ -1,9 +1,27 @@
 body {
-	background-color: #AAA;
 }
 
 h1 {
-	color: red;
+	margin-bottom: 24px;
+}
+
+h3 {
+	margin-top:24px;
+	margin-bottom: 24px;
+	border-bottom: dashed 1px #666;
+}
+
+h4 {
+	margin-top: 24px;
+	margin-bottom: 24px;
+	padding-left: 16px;
+	border-left: solid 16px #666;
+	border-bottom: solid 1px #666;
+}
+
+.entry_body {
+	border-bottom: solid 2px #666;
+	margin-bottom: 24px;
 }
 
 #main {
