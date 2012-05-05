@@ -27,7 +27,9 @@ Get Start
 
  Ok,you start blog in Pysimb.Can your Server Machine use Python3? :) 
 
- Default Entry Directory is "Entry".Make Directory and Make file (ex. foobar.markdown)
+ Copy or Rename config.default.yaml -> config.yaml.
+
+ Default Entry Directory is "Entry". Make Directory and Make file (ex. foobar.markdown)
 
  And,browse Pysimb,show page by pysimb. 
 
