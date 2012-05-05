@@ -16,5 +16,6 @@ html
               @{filelist}
         div#main.span10
           h1.entrytitle | @{entry_title}
+          p.date | post at @{entry_date}
           @{entry_body}
           <a href="./"> Index </a>

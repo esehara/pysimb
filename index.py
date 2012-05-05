@@ -57,6 +57,9 @@ class Pysimb:
 	def parse_string_entry(self,string):
 		self.cgi_value['file'][0] = self.escape_cgi(self.cgi_value['file'][0])
 		load_entry_array = open_utf8(self.configure['Dir']['Entry'] + "/" + self.cgi_value['file'][0]).readlines()
+		load_entry_date = time.strftime('%Y/%m/%d %X',
+				(time.localtime(os.path.getmtime
+						(self.configure['Dir']['Entry'] + "/" + self.cgi_value['file'][0]))))
 		dp("[Run] load_entry_array is loaded")
 		entry_title = load_entry_array.pop(0)
 		load_entry_string = "".join(load_entry_array)
@@ -65,6 +68,7 @@ class Pysimb:
 								 load_entry_string)
 		string = string.replace("@{entry_title}",
 								 entry_title)
+		string = string.replace("@{entry_date}",load_entry_date)
 		return string
 
 	def parse_string_body(self,string):
