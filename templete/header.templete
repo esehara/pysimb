@@ -1,4 +1,4 @@
 head
   <link rel='stylesheet' href='@{public_dir}/css/bootstrap.min.css' type='text/css'>
-  <link rel='alternate' href='@{link}' title='RSS' type='application/rss+xml'>
+  <link rel='alternate' href='@{link}/index.py?meta=RSS' title='RSS' type='application/rss+xml'>
   @{publish_css}
